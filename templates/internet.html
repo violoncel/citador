@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Internet{% endblock %}
+{% block heading %}Internet{% endblock %}
+
+{% set active_page = "internet" %}
+
+{% block form %}
+<div class="mb-3">
+    <label class="form-label">Adreça eletrònica</label>
+    <input type="text" id="email" class="form-control" name="email" placeholder="Introdueix aquí l'adreça electònica de l'autor">
+</div>
+<div class="mb-3">
+    <label class="form-label">Any</label>
+    <input type="number" id="any" class="form-control" name="any" placeholder="Entra aquí l'any de publicació">
+</div>
+{% endblock %}

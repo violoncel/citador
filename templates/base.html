@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/inici">CITADOR TDR</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="{{'nav-link active' if active_page == 'inici' else 'nav-link'}}" href="/inici">Inici</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="{{'nav-link active' if active_page == 'llibres' else 'nav-link'}}" href="/llibres">Llibres</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="{{'nav-link active' if active_page == 'revistes' else 'nav-link'}}" href="/revistes">Revistes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="{{'nav-link active' if active_page == 'internet' else 'nav-link'}}" href="/internet">Internet</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="{{'nav-link active' if active_page == 'enciclopedies' else 'nav-link'}}" href="/enciclopedies">Enciclopèdies</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+
+        <form method="POST">
+            <fieldset>
+              <legend>{% block heading %}{% endblock %}</legend>
+              <div class="mb-3">
+                <label class="form-label">Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control" placeholder="Entra aquí el nom de l'autor">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Cognom</label>
+                <input type="text" id="cognom" name="cognom" class="form-control" placeholder="Entra aquí el cognom de l'autor">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Títol</label>
+                <input type="text" id="titol" class="form-control" name="titol" placeholder="Entra aquí el títol del document">
+              </div>
+              {% block form %}{% endblock %}
+              <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Citar!</button>
+            </fieldset>
+          </form>
+        <textarea id="input" cols="80" rows="1">{{text}}</textarea>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>

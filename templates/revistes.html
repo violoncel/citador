@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Revistes{% endblock %}
+{% block heading %}Revistes{% endblock %}
+
+{% set active_page = "revistes" %}
+
+{% block form %}
+<div class="mb-3">
+    <label class="form-label">Nom de la revista</label>
+    <input type="text" id="nom" class="form-control" name="revista" placeholder="Entra aquí el nom de la revista">
+</div>
+<div class="mb-3">
+    <label class="form-label">Data</label>
+    <input type="text" id="data" class="form-control" name="data" placeholder="Exemple: desebre 98">
+</div>
+<div class="mb-3">
+    <label class="form-label">Número</label>
+    <input type="number" id="numero" class="form-control" name="numero" placeholder="Número de la revista">
+</div>
+<div class="mb-3">
+    <label class="form-label">Pàgines que ocupa</label>
+    <input type="text" id="pags" class="form-control" name="pags" placeholder="Entra aquí el número de pàgines que ocupa">
+</div>
+{% endblock %}
